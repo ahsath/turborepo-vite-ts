@@ -1,14 +1,16 @@
-# Turborepo starter
+# Turborepo + Vite + TS Starter
 
-This is an official starter Turborepo.
+👷 **WIP**
 
-## Using this example
+This is a work in progress Turborepo starter project configured with Vite for apps and packages, it also has the minimal setup for linting with EsLint and code formatting with Prettier and is TypeScript ready.
 
-Run the following command:
+There are missing configs when building the `ui` package, for instance I haven't found a way to get Vite's HMR to work consistently when using `ui` in build mode with the `--watch` flag, so, for now the package.json file `"main"` and `"types"` fields will point to `"main.ts"` for each app.
 
-```sh
-npx create-turbo@latest
-```
+If needing to deploy your UI library you can however replace those settings with the contents of `ui/package-prod.json`, keep in mind you will have to do a full page refresh when editing files inside `ui/*`.
+
+There is a package called `package-clean` that may help with that, sometime in the future I may add it, PRs are welcome though.
+
+Remember to update your `"dev"` script for build mode and to generate types your UI library if needed.
 
 ## What's inside?
 
@@ -16,10 +18,9 @@ This Turborepo includes the following packages/apps:
 
 ### Apps and Packages
 
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `ui`: a stub React component library shared by both `web` and `docs` applications
-- `eslint-config-custom`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
+- `my-app`: a [Vue.js](https://vuejs.org/) app
+- `ui`: an empty Vue.js configured component library shared by `my-app` application
+- `eslint-config-custom`: `eslint` configurations (includes `@typescript-eslint`, `eslint-plugin-vue` and `@vue/eslint-config-prettier`)
 - `tsconfig`: `tsconfig.json`s used throughout the monorepo
 
 Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
@@ -32,50 +33,13 @@ This Turborepo has some additional tools already setup for you:
 - [ESLint](https://eslint.org/) for code linting
 - [Prettier](https://prettier.io) for code formatting
 
-### Build
-
-To build all apps and packages, run the following command:
+### Commands
 
 ```
-cd my-turborepo
+cd turborepo-vite-ts
+
 pnpm build
-```
-
-### Develop
-
-To develop all apps and packages, run the following command:
-
-```
-cd my-turborepo
 pnpm dev
+pnpm lint
+pnpm format
 ```
-
-### Remote Caching
-
-Turborepo can use a technique known as [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
-
-By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup), then enter the following commands:
-
-```
-cd my-turborepo
-npx turbo login
-```
-
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
-
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your Turborepo:
-
-```
-npx turbo link
-```
-
-## Useful Links
-
-Learn more about the power of Turborepo:
-
-- [Tasks](https://turbo.build/repo/docs/core-concepts/monorepos/running-tasks)
-- [Caching](https://turbo.build/repo/docs/core-concepts/caching)
-- [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching)
-- [Filtering](https://turbo.build/repo/docs/core-concepts/monorepos/filtering)
-- [Configuration Options](https://turbo.build/repo/docs/reference/configuration)
-- [CLI Usage](https://turbo.build/repo/docs/reference/command-line-reference)
