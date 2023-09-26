@@ -1,5 +1,7 @@
 {
   "prettier.configPath": ".prettierrc.json",
+  "prettier.documentSelectors": ["**/*.astro"],
+  "eslint.validate": ["javascript", "typescript", "astro"],
   "[vue]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -7,6 +9,9 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[astro]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   }
 }
