@@ -18,7 +18,8 @@ This Turborepo includes the following packages/apps:
 
 ### Apps and Packages
 
-- `my-app`: a [Vue.js](https://vuejs.org/) app
+- `vue-spa`: a [Vue.js](https://vuejs.org/) app
+- `astro`: an [Astro](https://astro.build/) app
 - `ui`: an empty Vue.js configured component library shared by `my-app` application
 - `eslint-config-custom`: `eslint` configurations (includes `@typescript-eslint`, `eslint-plugin-vue` and `@vue/eslint-config-prettier`)
 - `tsconfig`: `tsconfig.json`s used throughout the monorepo
