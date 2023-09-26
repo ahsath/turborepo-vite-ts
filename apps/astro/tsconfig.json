@@ -1,0 +1,6 @@
+{
+  "extends": "tsconfig/astro",
+  "compilerOptions": {
+    "verbatimModuleSyntax": true
+  }
+}
