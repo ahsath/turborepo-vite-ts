@@ -1,5 +1,5 @@
 <template>
-  <SayHi say-hi="Hi 👋🏿" />
+  <SayHi say-hi="Hi from Vue! 👋🏿" />
 </template>
 
 <script setup lang="ts">

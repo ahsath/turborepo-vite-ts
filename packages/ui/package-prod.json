@@ -1,8 +1,8 @@
 {
-    "exports": {
-        ".": {
-            "import": "./dist/lib/vue-fluent.js",
-            "types": "./dist/types/main.d.ts"
-        }
+  "exports": {
+    ".": {
+      "import": "./dist/lib/vue-fluent.js",
+      "types": "./dist/types/main.d.ts"
     }
+  }
 }
